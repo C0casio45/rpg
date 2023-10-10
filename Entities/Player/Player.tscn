@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Entities/Player/Player.gd" id="1_y36co"]
 [ext_resource type="Texture2D" uid="uid://dcx1krixg4gj3" path="res://Entities/Player/assets/player.png" id="2_c0kj5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj1b3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8vhn"]
+radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onu5s"]
 atlas = ExtResource("2_c0kj5")
@@ -409,11 +410,15 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_y36co")
+speed = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_uj1b3")
+position = Vector2(2, 14)
+shape = SubResource("CircleShape2D_t8vhn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nxqgd")
